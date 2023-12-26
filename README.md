@@ -29,13 +29,13 @@
 - Operating Systems are also responsible for Security and Networking (managing users and permissions, assigning ports and IP addresses)
 - Structure of an OS:
   - Kernel (e.g. Linux, Darwin)
-           - this part loads first when turning on a computer
-           - manages the hardware components (CPU, Memory, RAM, I/O Devices)
-           - Device Drivers are programs that allow external devices to interact with the computer
-           - Kernel is a program
-           - Consists of device drivers, dispatcher, scheduler, File System, ...
+    - this part loads first when turning on a computer
+    - manages the hardware components (CPU, Memory, RAM, I/O Devices)
+    - Device Drivers are programs that allow external devices to interact with the computer
+    - Kernel is a program
+    - Consists of device drivers, dispatcher, scheduler, File System, ...
   - Application Layer (e.g. Ubuntu, Mint, CentOS, Debian, Android, macOS, iOS)
-           - Different application layers have different graphics, programming languages, compilers, ...
+    - Different application layers have different graphics, programming languages, compilers, ...
   - User Apps
 - Computers for running applications that the public can access to are powered by Server Operating Systems, which usually have no GUI or I/O Devices (-> access to them only via a command line)
 
