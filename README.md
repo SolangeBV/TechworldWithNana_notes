@@ -40,3 +40,13 @@
 - Computers for running applications that the public can access to are powered by Server Operating Systems, which usually have no GUI or I/O Devices (-> access to them only via a command line)
 
 ### 2.2) Introduction to Virtualization & Virtual Machines
+- Virtual Machine: it makes it possible to install an OS on top of another OS
+- Hypervisor: makes it possible to host multiple virtual computers on a physical computer (e.g. VirtualBox)
+- VirtualBox creates a virtual CPU, a virtual RAM and virtual storage for each virtual machine (these resources come all from the hardware of the physical computer)
+- Virtual Machines are completely isolated
+- Type 1 Hypervisor: installed directly onto the hardware -> used for servers
+- Type 2 Hypervisor: installed onto the host OS -> used for Personal Computers
+- Benefits of virtualization: abstraction of the Operating System from the hardware (before: if the hardware is damaged, you lose your entire application, data, configurations and OS, after with virtualization: you can make copies of the Virtual Machine Image)
+- Backups of Virtual Machine Images are called Snapshots
+
+### 2.3) Setup Linux Ubuntu VM
