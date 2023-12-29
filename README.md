@@ -49,4 +49,31 @@
 - Benefits of virtualization: abstraction of the Operating System from the hardware (before: if the hardware is damaged, you lose your entire application, data, configurations and OS, after with virtualization: you can make copies of the Virtual Machine Image)
 - Backups of Virtual Machine Images are called Snapshots
 
-### 2.3) Setup Linux Ubuntu VM
+### 2.4) Linux File System
+- Windows:
+  - Multiple root folders (aka discs or drives)
+- Linux:
+  - Hierarchical Tree Structure
+  - One root folder
+- Folders under the root folder in Linux:
+  - __root__: reserved for the root user
+  - __home__: reserved for all other users (so that can have their own data, programs and configurations)
+  - __bin__: stands for binary, contains executables for most essential user commands (available system-wide), eg) copy command
+  - __sbin__: binaries for different commands, system binaries, need the permission of a super-user to be executed, eg) creating users
+  - __lib__: libraries for those binary commands
+  - __usr__: used to be the user home directory, now containing the same commands from the root folder (bin, sbin, lib, ...) -> created historically to hold the data that could not fit into the folders under the root folder
+  - /usr/local: contains programs that YOU install on the computer and that will be available for ALL users
+  - If you need to install programs only for your users, then do that in the home directory
+  - __opt__: optional folder, contains third-party programs that need to be installed all in one place and not divided into lib and bin folders (eg: IDE programs)
+  - __boot__: contains files required for booting (NB: <u>never</u> touch this folder)
+  - NB: the afore-mentioned folders are read-only!
+  - __etc__: contains system information that can be writable (like user passwords or configuration files)
+  - __dev__: location of device files (eg: webcam, keyboard, hard drive, ..), apps and drivers will have access to this folder and <u>not</u> the user
+  - __var__: contains files to which the system writes data during the course of its aoperation (eg: logs, cache)
+  - __tmp__: contains temporary resources needed for some processes
+  - __media__: contains subdirectories where removable media devices are mounted to when they are inserted into the computer (eg: a USB, a disc)
+  - __mnt__: sys admins mount temporary file systems here
+  - Hidden files: there are some in the home directory. You can see them by choosing "show hidden files" on the menu
+    - Hidden files are called dotfiles because their name starts with a dot
+    - To create a hidden folder: name it with a dot before the name
+    
