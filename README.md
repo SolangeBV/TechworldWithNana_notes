@@ -77,3 +77,12 @@
     - Hidden files are called dotfiles because their name starts with a dot
     - To create a hidden folder: name it with a dot before the name
     
+### 2.5) Introduction to Command Line Interface
+eg) nana@nana-ubuntu:~$
+- nana: the username logged in the computer
+- nana-ubuntu: the computer name (or server name) for that CLI
+- The tilde (~) stands for home directory
+- The $ stands for a regular user (and not a root (aka admin) user -> then it would be #)
+
+### 2.6) Basic Linux Commands
+- 
