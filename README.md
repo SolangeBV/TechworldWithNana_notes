@@ -197,3 +197,31 @@ __Add Repository to official list of repos__
 - __:%s/oldString/newString__: to replace all the occurrences of a word (note that s stands for String, because we are replacing strings)
 
 ### 2.9) Linux Accounts & Groups
+- 3 User Categories:
+  - Root User: unrestricted permissions (aka superuser) -> there is only __one__ per computer
+  - User: user we create to login and that will have a directory in the home directory
+  - Service: relevant on Linux Server distributions (eg: a web application server or a database server that will be started by a service user)
+- How to manage permissions:
+  - User Level -> give permissions to User directly
+  - Group Level -> give permissions to all users within a certain group
+- /etc/passwd: stores user account information (username:password:userId:groupId:userIdInfo:homeDirectory:pathOfShell)
+- __sudo adduser [username]__: add a user
+- __sudo passwd [username]__: to set a new password for a certain user
+- __su - [username]__: to login as another user
+- __su -__: to login as the root user
+- __sudo groupadd [groupName]__: to create a new group
+- __cat /etc/group__: to print all groups
+- adduser + addgroup + deluser + delgroup -> you don't have to insert all the information yourself -> use these for manual insertions
+- useradd + groupadd + userdel + groupdel -> you have to insert all the information yourself -> use it for automated tasks (like scripts)
+- __sudo usermod -g [group] [username]__: change the primary group of a user
+- A user can get on primary group and multiple secondary groups
+- __sudo usermod -G [group1], [group2] [username]__: to assign a user to one or multiple secondary groups
+- __sudo usermod -aG [group] [username]__: to append a new secondary group to the already existing groups of a user
+- __man ls__: to access the Linux manual pages to access all possible commands
+- __groups__: to see all groups the logged user belongs to
+- __groups [username]__: to see all groups a certain user belongs to
+- __exit__: to logout from the current session and login into the previous session (aka previous user)
+- __sudo gpasswd -d [username] [group]: to remove a user from a group
+
+### 2.10) File Ownership & Permissions
+- 
