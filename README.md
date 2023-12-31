@@ -85,4 +85,38 @@ eg) nana@nana-ubuntu:~$
 - The $ stands for a regular user (and not a root (aka admin) user -> then it would be #)
 
 ### 2.6) Basic Linux Commands
-- 
+__Commonly used commands__
+- __pwd__: print working directory (to see which folder we are in)
+- __ls__: list folders and files (located in the working directory)
+- __ls absolute/path/of/the/target/directory__: list folders and files located in a directory different from the working directory
+- __cd__: move to another directory
+- __mkdir__: create a directory in the working dir
+- __touch [filename.extension]__: create a file in the working dir
+- __rm [filename.extension]__: remove file
+- __rm -r [folderName]__: remove folder (-r stands for recursive, because it will delete all the files within that folder too)
+- __cd /__: move to root folder
+- __clear__: clean up terminal history
+- Everything in Linux is a file! Text documents, pictures, directories, commands, ...
+- __mv [filename] [newFilename]__: rename the file to a new filename
+- __cp -r [folderName] [name of copy folder]__: copy a folder and make a copy of it
+- __cp [fileName] [copyFileName]__: copy a file and make a copy of it
+- __ls -R [folderName]__: list all the files in the chosen directory and in its subdirectories
+- __history__: displays all the commands that we have executed in the current session
+- __CTRL + r__: goes through search history and finds all commands starting with the letters that you type
+- __CTRL + c__: stops the current command
+- __CTRL + SHIFT + v__: paste copied text in the terminal
+- __ls -a__: display hidden files (-a stands for "all")
+- __cat [filename]__: display contents of a file (cat stands for "concatenate")
+  
+__Display OS Information__
+- __uname -a__: show system and kernel
+- __cat /etc/os-release__: version information
+- __lscpu__: detailed info about the CPU
+- __lsmem__: memory information
+
+__Execute commands as superuser__
+- sudo -> allows regular users to run programs with the security privileges of the superuser or root (just on that line)
+- __sudo adduser [userName]__: example of using a command that only superusers can use
+- __su - [otherUser]__: switch to user otherUser
+
+### 2.7) Package Manager - Install Software
