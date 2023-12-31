@@ -248,5 +248,19 @@ __Add Repository to official list of repos__
   - __sudo chmod 777 [filename]__: to define permission blocks for all the owners (there are numbers from 0 to 7 that represent a different set of permissions, like 7 for rwx or 1 for --x)
   - __ls -la__ : modifying permissions for hidden files
 
-### 2.11) Basic Linux Commands - Pipes & Redirects
+### 2.11) Pipes & Redirects
+- The output of one program can become the input of another program
+- The pipe command (|) pipes the output of the previous command as an input to the next command
+- eg: cat /var/log/syslog | less 
+- __less__ is a command that displays the contents of a file or a command output, one page at a time (you can move pages by typing on the spacebar or on __b__, then closing the program by typing __q__)
+- __history | grep sudo__: filter all commands that contain "sudo" (Globally Search for Regular Expression)
+- __history | grep "sudo chmod"__: to filter all commands that contain a phrase (note the quotation marks)
+- __ls /usr/bin | grep java__: to list all files that have a java extension or have "java" in their name
+- __history | grep sudo > sudo-commands.txt__: to save the results of the last command into a file
+- __cat sudo-commands.txt > sudo-rm-commands.txt__: to copy the contents of a file into a new file
+- __history | grep rm > sudo-rm-commands.txt__: to overwrite commands in an already existing file
+- __history | grep rm >> sudo-rm-commands.txt__: to append more commands to an already existing file (note the double >>)
+- It is possible to write multiple separate commands on the same line, as long as they are separated by a semicolon (;) -> they will be executed in the same order as they are written
+
+### 2.12) 
 - 
