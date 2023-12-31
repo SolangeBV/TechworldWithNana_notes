@@ -224,4 +224,29 @@ __Add Repository to official list of repos__
 - __sudo gpasswd -d [username] [group]: to remove a user from a group
 
 ### 2.10) File Ownership & Permissions
+- __sudo chown [username]:[groupname] [filename.extension]__: to change the user owner and/or the group owner of a file
+- __sudo chgrp [groupname] [filename.extension]__: to change the group owner of a file
+- __ls -l__: list all the files in the working dir with extra information (permissions and ownership)
+- fileTypes:
+  - __-__: regular file
+  - __d__: directory
+  - __c__: character device file
+  - __l__: symbolic link
+- permissions:
+  - __r__: read
+  - __w__: write
+  - __x__: execute (run a script or a command or any executable file)
+  - __-__: no permission
+- __Modifying permissions__:
+  - __sudo chmod -x [filename]__: removes the execute (-x) permission for all the owners of a file (you can also write a-x, with "a" stands for "all")
+  - __sudo chmod g-w [filename]__: remove the execute (-x) permission of the group owner (g) of a file
+  - if removing a permission for the user owner, then use __u__ instead of __g__
+  - if removing a permission for the other owner, then user __o__ instead of __g__
+  - __sudo chmod g+x [filename]__: to add a permission (use the plus sign instead of the minus sign)
+  - __sudo chmod g=rwx [filename]__: to add multiple permissions of a file for (in this case) the group owner
+  - __sudo chmod g=rw- [filename]__: to remove multiple permission of a file for (in this case) the group owner
+  - __sudo chmod 777 [filename]__: to define permission blocks for all the owners (there are numbers from 0 to 7 that represent a different set of permissions, like 7 for rwx or 1 for --x)
+  - __ls -la__ : modifying permissions for hidden files
+
+### 2.11) Basic Linux Commands - Pipes & Redirects
 - 
