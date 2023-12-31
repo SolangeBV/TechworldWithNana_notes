@@ -104,7 +104,7 @@ __Commonly used commands__
 - __history__: displays all the commands that we have executed in the current session
 - __CTRL + r__: goes through search history and finds all commands starting with the letters that you type
 - __CTRL + c__: stops the current command
-- __CTRL + SHIFT + v__: paste copied text in the terminal
+- __SHIFT + CTRL + v__: paste copied text in the terminal
 - __ls -a__: display hidden files (-a stands for "all")
 - __cat [filename]__: display contents of a file (cat stands for "concatenate")
   
@@ -120,3 +120,47 @@ __Execute commands as superuser__
 - __su - [otherUser]__: switch to user otherUser
 
 ### 2.7) Package Manager - Install Software
+__Package Manager__
+- We need a package manager in Linux to install/uninstall/update programs (program data are split into different folders, unlike in Windows)
+- Manages and resolves all required dependencies
+- There is already a Package Manager bundled in Linux -> __APT__ (Advance Package Tool)
+- __sudo apt search openjdk__: to install Java on our Linux computer
+- __sudo apt remove <package_name>__: to remove an installed package
+  NB: make sure you uninstall all the dependencies installed together with the package (you have to do this manually)
+  eg) you remove java (sudo apt remove openjdk-17-hre-headless) and then you remove the dependency installed with it (sudo apt remove openjdk-11-jre-headless)
+- __APT-GET__ is another package manager already available in Ubuntu
+- APT vs APT-GET: APT is more user-friendly (eg: it has a progress bar) but it as fewer command options, while APT-GET achieves the same as APT, but you need to use more command options to achieve the same as in APT
+- APT-GET does not have the search command
+- __Where do these packages come from?__ -> online repositories (eg: at.archive.ubuntu.com/ubuntu)
+  These sources are listed in /etc/apt/sources.list
+- NB: always upgrade the package index before upgrading or installing new packages -> sudo apt update (this refreshes the state of the repository that the distribution is using)
+- NB: there are packages that are not available in these official repositories -> we need to use an alternative way to install software, eg:
+  1) Ubuntu Software Center
+  2) Snap Package Manager
+  3) Add Repository to official list of reops (add-apt-repository)
+
+__Ubuntu Software Center__
+- This works like Playstore in an android phone
+__Snap Package Manager__
+- Previously it was called "snappy"
+- It is a package manager already bundled in ubuntu (try to tap "snap" in a terminal window)
+- The packages it installs already contain the needed dependencies
+- To install Visual Studio Code with snap, type "sudo snap install --classic code"
+- APT vs Snap: APT shares dependencies among packages, while Snap has self-contained dependencies in each package
+  Snap supports universal Linux packages, while APT is for only specific Linux distributions (like Ubuntu)
+  Snap updates automatically, while APT needs manual updates
+- Use Snap as an alternative to APT, but choose APT first
+__Add Repository to official list of repos__
+- Add repo into /etc/apt/sources.list
+  eg: sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bio..."
+- Then install package as usual with APT
+  eg: apt install <package name>
+- NB: verify these repositories first, as they might not be secure
+
+- NB: other distributions use different package managers^^
+- If a distribution is in the same category of another distribution, then they will use the same package manager
+- Examples of categories: __Debian based__ (Ubuntu, Debian, Mint -> they all use APT and APT-GET), __Red Hat based__ (RHEL, CentOS, Fedora -> they all use YUM)
+- Different package managers might have access to different versions of a package (older/newer)
+
+### 2.8) Vi & Vim Text Editor
+- 
