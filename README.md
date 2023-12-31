@@ -146,9 +146,10 @@ __Snap Package Manager__
 - It is a package manager already bundled in ubuntu (try to tap "snap" in a terminal window)
 - The packages it installs already contain the needed dependencies
 - To install Visual Studio Code with snap, type "sudo snap install --classic code"
-- APT vs Snap: APT shares dependencies among packages, while Snap has self-contained dependencies in each package
-  Snap supports universal Linux packages, while APT is for only specific Linux distributions (like Ubuntu)
-  Snap updates automatically, while APT needs manual updates
+- APT vs Snap
+  - APT shares dependencies among packages, while Snap has self-contained dependencies in each package
+  - Snap supports universal Linux packages, while APT is for only specific Linux distributions (like Ubuntu)
+  - Snap updates automatically, while APT needs manual updates
 - Use Snap as an alternative to APT, but choose APT first
 __Add Repository to official list of repos__
 - Add repo into /etc/apt/sources.list
