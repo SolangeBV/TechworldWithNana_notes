@@ -164,4 +164,36 @@ __Add Repository to official list of repos__
 - Different package managers might have access to different versions of a package (older/newer)
 
 ### 2.8) Vi & Vim Text Editor
-- 
+- Vim is a Command Line Interface UNIX text editor
+- Linux Command Line has a built-in text editor called Vim (aka improved version of Vi)
+- Why do we need Vim?
+  - Faster in CLI than in a text editor
+  - Supports multiple formats
+  - Needed when working on a remote server (Vim is the only option available)
+- __vim <filename.extension>__: open file with vim
+- Vim has two modes:
+  - Command Mode:
+    - Default mode
+    - Here you cannot edit the text
+    - Whatever you type is interpreted as a command
+    - Navigate, search, delete, undo, ...
+  - Insert/Edit Mode:
+    - Allows you to enter text
+- __i__: switch from command to insert mode
+- __esc key__: switch from insert to command mode
+- __wq__: save the file (Write Quit)
+- __:q!__: to close the file and discard the changes (aka, close without saving)
+- __vim [filename].[extension]__: creates a new file and opens it
+- __dd__: do delete a line (make sure to be in command mode and with the cursor on the line you want to delete)
+- __d10__: delete next 10 lines, including the one with the cursor in it
+- __u__: undo the last changes
+- __A__: jump to the end of the line and switch to insert mode (aka: do this when you are in command mode)
+- __0__: jump to the start of the line and stay in command mode
+- __$__: jump to the end of the line and stay in command mode
+- __12G__: jump to a certain line (in this case, to the 12th line of the file)
+- __/nginx__: to go in search mode (make sure to be in command mode) and look for a word (in this case, nginx)
+- __n__: jump to the next match of the search results
+- __N__: jump to the previous match of the search results
+- __:%s/oldString/newString__: to replace all the occurrences of a word (note that s stands for String, because we are replacing strings)
+
+### 2.9) Linux Accounts & Groups
