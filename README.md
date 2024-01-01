@@ -284,4 +284,81 @@ __Shebang__
 - __bash setup.sh__: another way to execute all the commands in the script file
 
 ### 2.13) Shell Scripting - Concepts & Syntax
+__Variables__
+- It is possible to use variables in a script file
+  - eg: file_name=config.yaml (__NB__: there must be __no spaces__ around the "=" sign)
+  - eg: echo "using file $file_name to configure something"
+- It is also possible to store the result of a command in a variable and reference it multiple times in the .sh file
+  - eg: config_files=$(ls config)
+  - eg: echo "here all all configuration files: $config_files"
+
+__Conditional Statements__
+- eg: The example below checks if "config" is a directory
+- eg: if [-d "config"]
+      then
+        echo "reading config directory contents"
+      else
+        echo "config dir not found. Creating one"
+        mkdir config
+      fi
+  - Note that _fi_ is just "if" but backwards and it tells the program that the if statement is concluded
+  - It is also possible to user _elif_ for else if statements
+
+  __Basic Operators__
+  - __-f file__: checks if file is an ordinary file
+  - __-r file__: checks if a file is readable
+  - __-u file__: checks if a user id is set for a file
+  - __-eq 10__: checks if a variable is numeric and is equal to 10 (in this case)
+
+  __Passing arguments to a Script__
+  - How can we provide values externally to a script?
+  - -> use positional parameters
+  - eg: user_group=$1
+  - Now add parameters to the commandline that starts the sh file
+  - eg: _./setup.sh admin_
+  - __NB__: you can use positional parameters from 1 to 9
+
+  __Read User Input__
+  - Another way to provide values to the bash script externally
+  - __read -p "Please enter your password: " user_pwd__: saves the password in the variable user_pwd
+  - __-p__ stands for prompt
+  - What do we do if we don't know in advance how many parameters we will be given?
+    - __$*__: this stores all the provided parameters in a single variable
+    - __$#__: this stores the number of parameters
+
+  __Loops in Linux__
+  - Types of loops in Linux:
+    - while loop
+    - for loop
+    - until loop
+    - select loop
+  - eg: for param in $*
+          do
+            echo $param
+          done
+  - Note that the intentation is just aesthetic (as in java), not functional (as in python)
+  - eg: while true
+        do
+          statement(s)
+          if [condition]
+          then
+            break
+          fi
+        done
+  
+__Arithmetic operations__
+- __$((2 + 4))__: note that we use double parentheses to tell the script file that the two variables are numbers and _not_ strings
+
+__Portability__
+- Comparing strings in Posix (and therefore Bash too): =
+- Comparing strings in Bash: ==
+- If statements in Posix (and therefore Bash too): [
+- If statements in Bash: [[
+- __NB__: if you use the Bash version, you will lose portability
+
+__Alternatives to Bash Scripting__
+- Another programming language (like Python)
+- A configuration tool (like Ansible)
+
+### 2.14) Shell Scripting - Basic Concepts & Syntax
 - 
