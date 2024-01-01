@@ -385,7 +385,19 @@ __Functions__
 
   }
   ```
-- To execute the function:
- ```bash
-  score_sum
+- __score_sum__: to execute the function
+- To pass parameters to a function:
+  ```bash
+  function create_file() {
+    file_name=$1
+    touch $file_name
+  }
   ```
+- __#__: commenting a line
+- __NB__: do not user more than 5 input parameters in a function, otherwise split it into smaller functions
+- __result=$(sum 2 10)__: example of storing the result of a function in a variable
+- __sum 2 10
+  result=$?__: this is another way of storing the result of a function in a variable ($? captures the value returned by the last command)
+
+### 2.15) Environment Variables
+- 
