@@ -400,4 +400,30 @@ __Functions__
   result=$?__: this is another way of storing the result of a function in a variable ($? captures the value returned by the last command)
 
 ### 2.15) Environment Variables
+- Each user in an Operating System has its own environment (eg: theme, shell program, default editor, default web browser)
+- These configurations are saved in the user's environments only
+- Environment variables are KEY=value pairs
+- eg: SHELL=/bin/bash
+      HOME=/home/nana
+      USER=nana
+- __printenv__: access all environment variables for the logged user
+- __printenv USER__: to access a specific environment variable (in this case, USER)
+- __echo $USER__: to reference environment variables in CLI or bash scripts
+- It is possible to create our own environment variables, for example, to store credentials
+- Every programming language has ways to access to environment variables
+- __export DB_USERNAME=dbuser__: to create/rename a custom environment variable
+- __unset DB_NAME__: to delete environment variables
+- __NB__: the _export_ command is used to set variables that will last only during the current terminal session
+- What to use instead to set environment variables permanently? -> in the .bashrc file in your home directory
+  - __export DB_USERNAME=dbuser__: write this in the .bashrc file
+  - __source .bashrc__: to reload the .bashrc file (in the CLI terminal)
+    
+__Persisting environment variables (system-wide)__
+- in the /etc folder within the home directory, there is a file (called _environment_) that stores all the environment shared by all users
+- The PATH environment variable contains the list of directories containing executable files, all separated by _:_
+  - It tells the shell which directories to search in for the executable in response to our executed command
+  - eg: to execute the _ls_ command, we don't need to write "/usr/bin/ls", but instead we only write "ls" and the system knows where to find the command
+  - it is also possible to add a command only for our user -> add the PATH variable in .bashrc file with the location of the command we created appended to the global path (PATH=$PATH:/home/nana)
+
+### 2.16) Networking Basics
 - 
