@@ -361,4 +361,31 @@ __Alternatives to Bash Scripting__
 - A configuration tool (like Ansible)
 
 ### 2.14) Shell Scripting - Basic Concepts & Syntax
-- 
+__Functions__
+- function_name () {
+  list of commands
+  }
+- To define a function:
+  ```bash
+  function score_sum {
+    sum=0
+  while true
+  do
+    read -p "enter a score: " score
+
+    if ["$score" == "q"]
+    then
+      break
+    fi
+
+    sum=$(($sum+$score))
+    echo "total score: $sum"
+
+  done
+
+  }
+  ```
+- To execute the function:
+ ```bash
+  score_sum
+  ```
