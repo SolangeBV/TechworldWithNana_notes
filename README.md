@@ -262,5 +262,26 @@ __Add Repository to official list of repos__
 - __history | grep rm >> sudo-rm-commands.txt__: to append more commands to an already existing file (note the double >>)
 - It is possible to write multiple separate commands on the same line, as long as they are separated by a semicolon (;) -> they will be executed in the same order as they are written
 
-### 2.12) 
+### 2.12) Introduction to Shell Scripting
+- Allows to run the same series of commands in the same order on another server -> all written in a file (aka, a shell script)
+- A shell (.sh) script is a file full of Linux (or UNIX-like) commands
+- __Shell__: the program that interprets and executes the various commands that we type in the terminal
+  - it translates our command so that the OS Kernel can understand it
+- __sh__: (aka Bourne Shell), a Shell implementation
+  - used to be the default Shell
+- __Bash__: (aka Bourne again Shell), another Shell implementation
+  - improved version of sh
+  - currently the default Shell for most UNIX like systems -> usually Shell and Bash are often used interchangeably
+  - Bash is a shell program and a programming language
+    
+__Shebang__
+- __touch setup.sh__: example of creating a bash script file
+- We might have multiple shell program on the system -> how does the OS know which shell to use? -> By writing a Shebang line
+- eg: #!/bin/bash _or_ #!/bin/sh _or_ #!/bin/zsh (written at the beginning of the .sh file)
+- The Shebang line points to a file under /bin which is going to act as the interpretor of the .sh file we are writing
+- __sudo chmod u+x setup.sh__: create user permissions to run the file -> now it is an executable file
+- __./setup.sh__: to execute all the commands in the script file
+- __bash setup.sh__: another way to execute all the commands in the script file
+
+### 2.13) Shell Scripting - Concepts & Syntax
 - 
