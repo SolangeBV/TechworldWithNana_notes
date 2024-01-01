@@ -426,4 +426,17 @@ __Persisting environment variables (system-wide)__
   - it is also possible to add a command only for our user -> add the PATH variable in .bashrc file with the location of the command we created appended to the global path (PATH=$PATH:/home/nana)
 
 ### 2.16) Networking Basics
+- __LAN__: Local Area Network -> collection of devices connected together in one physical location
+- Each device has a unique __IP__ address (Internet Protocol)
+- Devices communicate via these IP addresses
+- IP addresses are composed of 32 bits (4 groups of 8 bits)
+- IP addresses range from 0.0.0.0 to 255.255.255.255
+- __Switch__: a tool in the LAN that helps devices communicate. It knows all IP addresses of all devices
+- How to talk to devices outside LAN (eg: open facebook)? -> __Router__
+- __Router__: a device that sits between a LAN and outside networks (Wide Area Network)
+- __Gateway__: IP address of the Router
+- Devices in the LAN belong to the same IP address range
+- __Subnet__: logical subdivision of an IP network
+- Example of IP address range: 192.168.0.0 255.255.255.0 (only the last number will change within the subnet)
+- Another example of IP address range: 192.168.0.0 255.255.0.0 (the last __two__ will change within the subnet)
 - 
