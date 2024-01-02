@@ -439,4 +439,46 @@ __Persisting environment variables (system-wide)__
 - __Subnet__: logical subdivision of an IP network
 - Example of IP address range: 192.168.0.0 255.255.255.0 (only the last number will change within the subnet)
 - Another example of IP address range: 192.168.0.0 255.255.0.0 (the last __two__ will change within the subnet)
+- __CIDR__: Classless Inter-Domain Routing, another way to represent IP ranges
+  eg: 192.168.0.0/16 -> the first 2 octets (16 bits) are fixed
+- Any device needs 3 pieces of data for communication: IP Address, Subnet, Gateway
+- IP addresses within a LAN are __not__ visible to the outside network or internet
+- The address of a device within a LAN is replaced with the IP address of the router -> NAT (Network Address Translation)
+
+__Firewall__
+- By default, a device within the LAN (eg: a server) is not directly accessible from outside the LAN -> everything outside the LAN communicates with the router
+- A firewall is a system that prevents unauthoriyed access from entering a private network
+- Using Firewall Rules, you can define which requests are allowed
+  - eg: define which IP addresses in the LAN are accessible
+  - eg: define which IP addresses outside the LAN can access the server
+  - eg: which ports are accessible on the server
+
+__Port__
+- Every device has a set of ports
+- Ports are like a set of doors to the same building
+- You can allow specific ports (doors) and specific IP addresses (guests)
+- Different applications listen on specific ports -> only these ports are available to access that application
+- Default ports: 80 (Web Servers), 3306 (MySQL databases), 5432 (PostreSQL databases)
+- __NB__: ports are unique on each device -> you can't start two applications on a device that share the same port
+
+__Domain Name Service (DNS)__
+- www.facebook.com runs on different computers, each identified by a different IP address -> that's why we don't type the IP address
+- Humans remember names more easily than a set of numbers -> that's why we use DNS
+- Under the hood, that name is translated into an IP address
+- The service that does this translation is DNS
+- These names are divided into different domains that follow a hierarchical structure
+  - _Root Domains_, with names from a to m
+  - _Top Level Domains_, like .mil, .edu, .com, .org, .net, .gov, .it, .de, .us, ...
+  - _Subdomain_, optional, another word separated by a dot before the official name of the website (eg: courses.nana.com, workshops.nana.com, bootcam.nana.com)
+- Who regulates these names? Internet Corportation for Assigned Names and Numbers (ICANN)
+- Each computer has a DNS client installed in it that is responsible to retrieve (and store as cache) the IP address that corresponds to that name
+
+__Networking Commands__
+- __ifconfig__: information about your network
+- __netstat__: active internet connections established on your machine (aka, which applications on your computers are actively running and on which port they are listening)
+- __ps aux__: current running processes and programs
+- __nslookup__: to retrieve the IP address of any domain name
+- __ping__: checks whether a service or application is accessible
+
+### 2.17) SSH Secure Shell
 - 
