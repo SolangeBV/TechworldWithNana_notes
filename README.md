@@ -502,7 +502,7 @@ ssh root@64.225.198.160
 - root -> the username
 - 64.225.198.160 -> the IP address of the remote server we want to connect to
 - after this, type the password you have configured in the remote server
-- 
+  
 __Connect to a remote server via SSH (SSH key pair)__
 - While we are connected to the remote server, we have ccess the .ssh hidden folder
 - __ssh-keygen -t rsa__: to create a SSH key pair
