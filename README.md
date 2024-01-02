@@ -481,4 +481,45 @@ __Networking Commands__
 - __ping__: checks whether a service or application is accessible
 
 ### 2.17) SSH Secure Shell
+- How to access a remote server to copy a script file onto it and execute it? -> secure shell
+- SSH: a computer protocol that gives users a secure way to access a computer over the internet
+- SSH refers also to the suite of utilites that implement that protocol
+- Two ways to authenticate to a remote server with SSH:
+  - with Username and Password
+  - SSH key pair
+- __Private Key__: secret key (imagine a physical key). It is stored securely on the client machine
+- __Public Key__: public (imagine a door lock). It is installed on the remote server and can be shared
+- Each client will have a different set of SSH key pair. Each public key will be installed onto the remote server
+- It is also possible to create a SSH key pair for services, like Jenkins
+- Most Operating Systems will have an SSH service installed and running on port 22
+- __NB__: In firewall rule we allow access only on a single port, meaning we allow access only to a single application and not to the entire computer the application is running on
+- __NB__: When we connect with an SSH service (and not only through a port), we have access to the entire computer -> we need to restrict access to specific IP addresses with the firewall
+
+__Connect to a remote server via SSH (username and password)__
+```bash
+ssh root@64.225.198.160
+```
+- root -> the username
+- 64.225.198.160 -> the IP address of the remote server we want to connect to
+- after this, type the password you have configured in the remote server
+- 
+__Connect to a remote server via SSH (SSH key pair)__
+- While we are connected to the remote server, we have ccess the .ssh hidden folder
+- __ssh-keygen -t rsa__: to create a SSH key pair
+- Now under .ssh we have two new files: id_rsa (private key) and id_rsa.pub (public key)
+- On the remote server modify the file _authoriyed_keys_ under .ssh and add the contents of id_rsa.pub
+- __exit__: to logout from the remote server
+- Now connect to the host again
+```bash
+ssh root@64.225.198.160
+```
+- Now we are no longer prompted for a password because (under the hood) we used the SSH keys
+- The command above actually stands for __ssh -i .ssh/id_rsa root@64.225.198.160__, but we can type the shorter version when the private key is named and located as shown in the command
+
+__Copy a file from the local machine to the remote server__
+- __scp test.sh root@64.225.198.160:/root__: stands for secure copy (scp [filename] [username]@[server IP address]/[location on the server])
+- longer version of this command: __scp -i .ssh/id_rsa test.sh root@64.225.198.160:/root__
+
+## Module 3 - Version Control with Git
+### 2.1) Introduction to Version Control and Git
 - 
