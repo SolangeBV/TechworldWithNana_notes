@@ -544,5 +544,29 @@ Remote Repository
 - I will also need to authenticate myself to GitHub/GitLab -> add an SSH key to the git client
 
 ### 3.4) Working with Git
-- 
+- git status -> to see what files have been modified (red) and added into the staging area (green)
+- git add . -> adds all the modified files
+- git log -> local repository history
 
+### 3.5) Initialiye a Git project locally
+- The project is on a local repo but not on a Git repository yet
+- The project does not contain a .git folder that contains all the info for that project
+- git init -> to create .git folder and automatically a master branch
+- To configure a remote repository ->  create a new empty project on GitLab + _git remote add origin git@gitlab.com:nameoftheproject.git_
+- origin = your remot git project/repository
+- To connect the local master branch to the remote master branch, I need to push the master branch to the remote repo: _git push --set upstream origin master_
+- Now all the code is pushed into the remote repository
+- If I delete the .git folder, then I would lose the connection to the remote repository
+
+### 3.6) Concept of Branches
+- Create a branch for each feature and each bugfix
+- git branch: shows all available branches
+- git checkout nameOfExistingBranch: I switch into the branch nameOfExistingBranch
+- git checkout nameOfNewBranch: do this on the master, and it will create a branch out of the master
+- git push --set-upstream origin nameOfNewBranch -> to push the new branch (and any changes in the branch) into the remote repository
+- master branch -> ready for production
+- develop branch -> master branch for developers that will be merged into the master at the end of a sprint
+- Best practice: no develop branch to ensure CI/CD (develop branch might become a work-in-progress branch)
+
+### 3.7) Merge Requests
+- 
