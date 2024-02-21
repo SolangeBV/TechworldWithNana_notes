@@ -522,4 +522,27 @@ __Copy a file from the local machine to the remote server__
 
 ## Module 3 - Version Control with Git
 ### 2.1) Introduction to Version Control and Git
+- Code is hosted centrally on the internet -> code repository
+- Best practice: push and pull often from remote repository -> Continuous Integration
+
+### 3.2) Basic Concepts of Git
+- Git is the most popular version control tool
+- SVN: another version control tool
+
+Working Directory
+-> git add
+Staging Area
+-> git commit
+Local Repository
+-> git push
+Remote Repository
+
+### 3.3) Setup Git Repository Remote and Local
+- GitHub and GitLab are different platforms that can host your repository
+- Companies have their own company git servers (e.g. Bitbucket)
+- To clone the remote repository into your own local repository, you´ll need to install a Git Client (either a UI client or a Git Command Line Tool)
+- I will also need to authenticate myself to GitHub/GitLab -> add an SSH key to the git client
+
+### 3.4) Working with Git
 - 
+
