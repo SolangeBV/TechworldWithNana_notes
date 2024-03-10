@@ -569,4 +569,61 @@ Remote Repository
 - Best practice: no develop branch to ensure CI/CD (develop branch might become a work-in-progress branch)
 
 ### 3.7) Merge Requests
-- 
+
+### 3.8) Deleting Branches
+- It is possible to delete branches once they are merged in the master
+- Best practice: delete branch after merging and create a bugfix branch if that branch needs bugfixing
+- If a branch is deleted on the remote repository, I need to delete it locally too: git branch -d nameOfTheBranchHere
+
+### 3.9) Rebase
+- Git pull _before_ git push
+- git pull -r : (rebase) pause the changes from the remote branch and stack our commit on top of the changes on the remote branch -> much cleaner log history (no merge branch commit)
+
+### 3.10) Resolving Merge Conflicts
+- IntelliJ > Git > Resolve Conflicts -> you get a view of the code changes from different developers
+- After the conflicts are fixed: git rebase --continue -> it's like a commit
+- Then: git push
+
+### 3.11) Git ignore
+- Don't track certain files
+- .gitignore in the root directory of the project
+- build folders are ignored (they contain compiled code)
+- If a file is already in the remote repository and I add it to the .gitignore file, git will still track it
+- git rm -r --cached . -> This removes all the ignored files from the repository (you need to git commit after this)
+
+### 3.12) Git stash
+- git stash -> to stash some changes I am not committing yet
+- git stash pop -> to get the stashed changes back
+
+### 3.13) Going back in history
+- Each commit has a unique hash that identifies it
+- Commit X has maybe caused some errors in the code -> to go back to the version before that branch: git checkout Y (where Y is the commit made before commit X)
+- It is also possible to create a branch from this point
+- To go back to present: git checkout nameOfTheBranchWeWantToGoBackTo
+
+### 3.14) Undoing commits
+- HEAD is the pointer to the last commit
+- git reset --hard HEAD~1 -> to revert the last 1 commit and I no longer have the code changes locally
+- git reset --soft HEAD~1 -> to revert the last 1 commit, but I still have the code changes locally (no need to write 'soft', as this is the default behaviour)
+- git commit --amend -> commits the local changes into the last commit (it merges the changes into the last commit)
+- if the commit has already been pushed -> git reset --hard HEAD~1, then git push --force
+- NB: don't do this in the master and develop branch! Otherwise if they make new commits after you remove one, their commits will no longer be accepted because their logs don't match the logs in the remote repository
+- Alternative in the master branch: git revert <commit hash> and then git push
+- To get the commit hashes: git log
+- To summarize:
+	- git revert <commit hash> : creates a new commit to revert the old commit's changes
+	- git reset <commit hash> : removes old commit
+
+### 3.15) Merging branches
+- git checkout master
+- git pull -> make sure that the master is up to date
+- git checkout bugfix/nameOfBranchToBeMerged
+- git merge master -> to merge the changes in the master into the bugfix branch
+- git push -> to push the merge into the remote repository
+
+### 3.16) Git for DevOps
+- Configuration files need to be:
+	- tracked (history of changes)
+	- securely store in one place
+	- shareable for DevOps team
+- Need integration between the build automation tool and application git repository -> you might need to setup integration between build tool (see Jenkins) and git repository
