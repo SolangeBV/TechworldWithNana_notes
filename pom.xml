@@ -19,7 +19,20 @@
             <artifactId>logstash-logback-encoder</artifactId>
             <version>7.3</version>
         </dependency>
-        <!-- Add other dependencies here if needed -->
+        
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.32</version>
+        </dependency>
+
+        <!-- Logback Classic (SLF4J binding) -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.6</version>
+        </dependency>
     </dependencies>
 
     <build>
