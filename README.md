@@ -621,6 +621,63 @@ Remote Repository
 - git merge master -> to merge the changes in the master into the bugfix branch
 - git push -> to push the merge into the remote repository
 
+### Databases 
+
+- Databases are used to persist data
+- How to configure credentials and endpoints to a database?
+- Pass environmental variables on application start-up (from command line, configure in your code editor)
+- pass the environmental variables in the properties/configuration files (one file for each environment, like prod, dev, test)
+- As a DevOps engineer, I should be able to:
+- configure a DB
+- setup a DB
+- manage a DB (replicate, backup, restore) 
+
+## Database Types
+1) KeyValue Databases
+- e.g.: Redis, Memcached, etcd from Kubernetes)
+- Every key is unique
+- Very simple db -> no relations
+- Very fast
+- Limited storage (stored on the hard drive)
+- Used for caching, message queue
+2) Wide Column Databases
+- e.g.: Cassandra, HBase
+- Does not have predefined schema (number of columns can vary)
+- No joins
+- It is scalable
+- Used for time-series, IoT records, historical records (large data that does not have a structure)
+3) Document Databases
+- e.g.: MongoDB, DynamoDB, CouchDB
+- Documents are containers for key-value pairs
+- Documents are grouped in collections
+- Collections may be organized in a relational hierarchy
+- Slower in updates
+- Faster to read the data
+- No joins
+- Used for mobile apps, games
+- Not good for social media apps (where things are interconnected)
+4) Relational Databases
+- e.g.: MySQL, PostgreSQL
+- Most used
+- Structured databases
+- Require strict schema upfront
+- Structured Query Language for reading and writing in the DB
+- Data is organized into tables
+- Relational DBs are ACID-compliant (Atomicity, Consistency, Isolation, Durability)
+- No half-changes are updated in the databases (either ALL changes get applied, or NONE) -> important in banking
+- Difficult to scale
+5) Graph Databases
+- e.g.: Neo4j, Dgraph
+- For many-to-many relations
+- Instead of an extra-intermediate table, there are nodes and edges
+- Easier to query
+- Best for graphs, patterns, recommendation engines
+6) Search databases
+- e.g.: Elastic Search, Solr
+- Search DBs through massive data entries
+- Full text search in efficient and fast way
+- Similar to document-oriented DBs
+- Difference with document-oriented DBs: creates an index of all the individual words
 ### 3.16) Git for DevOps
 - Configuration files need to be:
 	- tracked (history of changes)
