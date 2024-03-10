@@ -621,8 +621,14 @@ Remote Repository
 - git merge master -> to merge the changes in the master into the bugfix branch
 - git push -> to push the merge into the remote repository
 
-### Databases 
+### 3.16) Git for DevOps
+- Configuration files need to be:
+	- tracked (history of changes)
+	- securely store in one place
+	- shareable for DevOps team
+- Need integration between the build automation tool and application git repository -> you might need to setup integration between build tool (see Jenkins) and git repository
 
+### Databases 
 - Databases are used to persist data
 - How to configure credentials and endpoints to a database?
 - Pass environmental variables on application start-up (from command line, configure in your code editor)
@@ -678,9 +684,3 @@ Remote Repository
 - Full text search in efficient and fast way
 - Similar to document-oriented DBs
 - Difference with document-oriented DBs: creates an index of all the individual words
-### 3.16) Git for DevOps
-- Configuration files need to be:
-	- tracked (history of changes)
-	- securely store in one place
-	- shareable for DevOps team
-- Need integration between the build automation tool and application git repository -> you might need to setup integration between build tool (see Jenkins) and git repository
