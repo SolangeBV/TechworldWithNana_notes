@@ -684,3 +684,26 @@ Remote Repository
 - Full text search in efficient and fast way
 - Similar to document-oriented DBs
 - Difference with document-oriented DBs: creates an index of all the individual words
+
+## Module 5 - Cloud & Infrastructure as Service Basics with DigitalOcean
+
+### 5.1) Intro to Cloud & IaaS
+- IaaS = Infrastructure as Service
+- There will be a server where your Web App will run on (eg: test till or on the cloud)
+- You will also have Jenkins on that server
+- IaaS providers: aws, Google Cloud, Digital Ocean, Microsoft Azure
+
+### 5.2) Setup Server on DigitalOcean
+- Best practice -> Configure Firewall on the server (because the server is public and is accessible on all ports by default)
+- When you configure a Firewall on a server, you explicitly allow access only on specific ports
+
+### 5.3) Deploy and run application artifact on Droplet
+- secure copy a file from your pc to the remote server:
+scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want to copy, host server, root folder where the file will be pasted into)
+- run the jar file: java -jar java-react-example.jar
+- netstat -lpnt -> to see on which port the app is listening on
+
+### 5.4) Create and configure a Linux user on a cloud server
+- Best practice: do not start applications with root users (because you are giving the application root privileges)
+- Best practice: create a separate user for every application and give it only the permission it needs to run the app
+- 
