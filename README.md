@@ -706,4 +706,28 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 ### 5.4) Create and configure a Linux user on a cloud server
 - Best practice: do not start applications with root users (because you are giving the application root privileges)
 - Best practice: create a separate user for every application and give it only the permission it needs to run the app
-- 
+
+
+## Module 6 - Artifact Repository Manager with Nexus
+
+### 6.1) Intro to Artifact Repository Manager
+- Artifacts = Apps built into a sharable, movable file (jar, war, zip, tar)
+- Artifact repository = storage of those artifacts (you need a different repository for each format of the artifacts)
+- Artifacts repository manager = manages all of the different repositories (uploads, stores and retrieves different build artifacts)
+- Artifacts repository managers also are a central storage for the artifacts of a company
+- Nexus = example of repository manager
+- Public repository managers -> eg: libraries/frameworks you use as dependencies (eg: MVNrepository for Java/jar files and npm for JavaScript files)
+- With Nexus you can:
+  - Host your own repositories (private access)
+  - Set up a proxy repository (public access)
+- Features of Repository Manager:
+  - Integrate with LDAP (to configure access management)
+  - Flexible and powerful REST API for integration with other tools (eg: to connect Jenkins to Nexus)
+  - Backup and restore
+  - Multi-format support (different file types: zip, tar, docker, ...)
+  - Metadata tagging (labelling and tagging artifacts)
+  - Cleanup policies (every time you push to the master branch, you create a NEW artifact -> you may run out of space)
+  - Search functionality (across projects, artifact repos, ...)
+  - User token support for system user authentication
+
+### 6.3) 
