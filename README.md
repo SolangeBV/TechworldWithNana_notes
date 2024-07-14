@@ -730,4 +730,57 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
   - Search functionality (across projects, artifact repos, ...)
   - User token support for system user authentication
 
-### 6.3) 
+### 6.2) Install and Run Nexus on a cloud server
+- Nexus folder: contains runtime and application of Nexus
+- Sonartype-work folder: contains own config for Nexus and data (you keep this folder if you upgrade Nexus, aka only the contents of the Nexus folder will change in case of an upgrade)
+- Sonartype-work folder can contain:
+  - plugins
+  - IP addresses that accessed Nexus
+  - Logs of Nexus App
+  - Backup
+- Nexus User must:
+  - execute nexus executable
+  - read/write sonartype-work folder
+
+### 6.4) Repository Types
+- Proxy
+  - Linked to a remote repository (eg: MVN central repository)
+  - When you want to retrieve a component, this proxy repo will first check if your company already has that component and download it from there instead of from the central repository (you save bandwidth use)
+  - Custom ones are used to save libraries or dependencies that you are using for a project (and you want to make sure that everyone has the same version)
+- Hosted
+  - Primary storage for artifacts and components (for example, of a company)
+- Group
+  - Allows you to combine multiple repositories and repository groups in a single repository
+  - Developers can then use a single URL to access all of these repositories -> one single endpoint
+
+### 6.6) Nexus REST API
+- Query Nexus Repository for different information:
+  - Which components are available
+  - Which repositories are available
+  - What are the versions
+- How to access the REST endpoint:
+  - Use a tool like curl or wget to execute http request
+  - Provide user and credentials of a Nexus user who has the required permissions
+
+### 6.7) Blob Store
+- Blob stores are used to store the components
+- They are either located as local storage (on the server where nexus is deployed -> eg: Digital Ocean droplet) or cloud storage (eg: Amazon S3)
+- Local default location: /opt/sonatype-work/nexus3/blobs/default
+- Blob stores, once created, they cannot be modified
+- Blob store used by a repository cannot be deleted
+- A repository cannot be split into multiple blobs
+
+### 6.8) Component vs Asset
+- Component -> folder that contains the jar (or zip, or tar, ..) file of a project + the metadata
+- Asset -> individual files (jar, xml, pom, ..) that belong to a single component
+- Docker Format gives assets unique identifiers (aka: docker layers)
+- 2 Docker Images are 2 distinct components that share the same assets
+
+### 6.9) Cleanup Policies and Scheduled Tasks
+- Admin - Compact blob store -> task that permanently deletes blob stores
+- Cleanup policies only perform a soft deletion (they are still on the disc), so it is a good practice to perform a compact blob store task after that
+- It is possible to either manually execute these task or to plan an automatic behaviour
+
+## Module 7 - Containers with Docker
+
+### 7.1) XXX
