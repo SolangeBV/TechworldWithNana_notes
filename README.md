@@ -783,4 +783,42 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 
 ## Module 7 - Containers with Docker
 
-### 7.1) XXX
+### 7.1) What is a Container
+- Definition: a way to package an application with all the necessary dependencies and configuration
+- A container is a portable artifact, easily shared and moved around
+- Where do containers live -> Container repository (can be private, and also public, eg: for docker -> DockerHub)
+- Before containers, applications had to be installed on the OS environment (the installation would be different for each OS)
+- After containers, applications can be installed in the containers (they have their own OS -> isolated environment)
+- Simply download the container on your local machine. This container will contain the app and all the configurations files needed for that app to run
+- Install docker runtime on the server instead of installing the app and all of its configurations
+
+### 7.2) Container vs Image
+- A container is made of layers of images
+- At the base of most containers you will have a linux base image
+- On the top of the container will be the application image
+- Docker Image:
+  - the actual package (app + configuration + dependencies)
+  - artifact, that can be moved around
+- Docker Container:
+  - When I pull the image to my local machine and I start it, that creates a container environment
+
+### 7.3) Docker vs. Virtual Machine
+- OS are made of 2 layers:
+  - OS Kernel
+  - OS Application Layer
+- The OS Kernel is at the core of every operating system
+- The OS Kernel interacts between the hardware and the software components
+- Applications run on the Kernel layer
+- Different Linux distributions have a different OS Applications Layer, but share the same OS Kernel
+- Virtualization:
+  - Docker virtualizes the OS Applications Layer (i.e.: a docker image contains the OS application layer; services and apps are installed on top of that layer)
+  - Virtual machines virtualize the OS Kernel *and* the OS Applications Layer -> it virtualizes the complete Operating system
+  - -> Docker uses the host OS, while a Virtual Machine uses its own OS (aka Guest OS)
+  - Docker images are smaller than VMs (MBs vs GBs)
+  - Docker containers are much faster to start than VMs (seconds vs minutes)
+  - A VM can run on any OS, but Docker can only run on a Linux OS
+- Docker Desktop -> makes it possible to run Linux-based containers on Windows and MacOS Operating Systems
+- Docker Desktop is a Hypervisor layer with a lightweight Linux distribution
+
+### 7.4) Docker Architecture and components
+- 
