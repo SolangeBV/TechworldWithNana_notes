@@ -821,4 +821,50 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 - Docker Desktop is a Hypervisor layer with a lightweight Linux distribution
 
 ### 7.4) Docker Architecture and components
+- Docker -> a container tool
+- When you install Docker, you install a Docker Engine.
+- A Docker Engine is made of 3 parts:
+  - Server -> responsible for pulling images + managing images and containers
+  - API -> interacts with Docker Server
+  - CLI -> client to execute docker commands against the server (eg: it tells the server to pull Docker images)
+- Docker server is made of:
+  - Container Runtime -> pulling images + managing container lifecycle
+  - Volumes -> persisting data into containers
+  - Network -> configuring network for container communcation
+  - Build Images -> build own Docker images
+- If you only need a container runtime, you can use containerD or cri-o instead of Docker
+- If you only need to build an image, you can use buildah instead of Docker
+
+### 7.5) Main Docker commands
+- Images vs Containers:
+  - Container is a running environment for an image
+  - A container is port-binded -> it uses a port to talk to the application running inside of the container
+- Multiple containers can run on your host machine
+- Container is listening on port X and you bind your laptop's port Y to it
+- Usually X and Y are the same, but if you have 2 containers running both on port X, then the laptop will use a port Y for the second container that is different from the port Y of the first container
+- some-app://localhost:3001 -> 3001 is the port Y, the one open on your laptop and bound to the port that the container is listening to
+- You can specify the binding of the port during the run command:
+  - docker run -p 6000:6379 redis
+  - 6000: the laptop's port that will bind to the container's port
+  - 6379: the port of the container
+
+### 7.6) Debugging Docker Containers
+- docker pull -> pulls the image from the repository to local environment
+- docker run -> docker pull (if the image is not locally available) + docker run
+- docker start -> restart a container already present in the local environment
+- docker stop
+- docker ps -> to see all running containers
+- docker exec -it container_ID -> to get the terminal of a running container (it stands for "interactive terminal")
+- exit -> to exit the interactive terminal
+- docker logs container_ID / docker logs container_name -> to see the logs of a container
+- docker run -d -> run the container in detached mode so that you can use the terminal again
+- docker run -p host_port:container_port -> bind the host port to the container
+- docker ps -a -> to see all containers (both running and not running)
+- docker images -> to see all the images that you have locally
+- docker run -p6001:6379 --name redis-older redis:6.2 -> this creates a new container for redis:6.2 called redis-older
+- docker run vs docker start:
+  - docker run -> creates a new container from an image
+  - docker start -> starts an already existing container
+
+### 
 - 
