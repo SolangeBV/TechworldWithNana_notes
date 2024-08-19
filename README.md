@@ -891,4 +891,28 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 - To see all Docker images -> docker images
 - To build a Docker image -> docker build -t nameOfApp:nameOfVersion pathToDockerFile
 - The path to the Dockerfile can simply be a dot (because we are in the directory containing the Dockerfile)
+
+## Module 13 - Programming Basics with Phython
+
+### 13.1 Introduction to Python
+- Python is used for:
+  - Web Development
+  - Data Science
+  - Machine Learning
+  - Artificial Intelligence
+  - Automation (eg: DevOps tasks)
+
+### 13.4 Python IDE vs Simple File Editor
+- To run a python file without a Phyton IDE:
+  python3 test.py
+- IDE = Integrated Development Environment
+  
+### 13.5 Strings and Number Data Types
+- Text types:
+  - String
+- Number types:
+  - Integer
+  - Float (decimal numbers)
+
+### 13.6 Variables
 - 
