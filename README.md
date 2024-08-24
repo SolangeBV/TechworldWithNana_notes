@@ -914,5 +914,15 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
   - Integer
   - Float (decimal numbers)
 
-### 13.6 Variables
-- 
+### 13.9 Packages, PyPI and pip
+- Python comes only with a set of built-in modules
+- Many more modules out there, which are NOT part of the Python installation (eg: Pandas, NumPy, TensorFlow, Django) -> these need to be installed separately
+- pypi.org is a module repository found online that contains additional python modules
+- PyPI = Python Package Index
+- People can publish their packages onto this repository -> there is a community
+- module vs package:
+  - module: python file
+  - package: a collection of modules
+- pip -> package manager used to install python packages (eg: pip install Django)
+- pip is installed when we installed Python
+
