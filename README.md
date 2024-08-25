@@ -926,3 +926,28 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 - pip -> package manager used to install python packages (eg: pip install Django)
 - pip is installed when we installed Python
 
+### 13.21 OOP: Classes and Objects
+- OOP = Object Oriented Programming
+- Class:
+  - Class is like an object constructor
+  - All classes have a __init__() function
+  - __init__() is executed automatically, whenever we create the objects from this class
+  - "self" parameter: it is a reference to the current instance of a class (needed to access the attributes of the class)
+```python
+class User:
+	def __init__(self, email, name, password, current_job_title):
+		self.email = email
+		self.name = name
+		self.password = password
+		self.current_job_title = current_job_title
+	def change_password(self, new_password):
+		self.password = new_password
+	def change_job_title(self, new_job_title):
+		self.current_job_title = new_job_title
+```
+- Python is an object oriented programming language (almost everything in Python is an object -> eg: strings)
+
+### 13.22 API Requests with Python
+- A python application and an API (eg: an app on GitLab) can communicate via a protocol (like HTTP)
+- JSON = lightweight format for transporting data, often used to send data over the web
+
