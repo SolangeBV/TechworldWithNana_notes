@@ -899,8 +899,25 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 - Note: when we tag an image, we do not rename it, but we create a copy of that image with the new name
 - Note: ``docker login`` needs to be done only once. After that, you can pull and push images any number of times you want
 
-### 7.12 Docker Volumes - Persisting Data
-- 
+### 7.13 Docker Volumes - Persisting Data
+- Used for data persistence in Docker
+- If we remove a container, we lose all the data
+- We use the host file system (eg: a directory) to save a copy of the data of a container (ie: the data will be saved both on the virtual file system and on the host file system)
+- Types of Docker volumes:
+  - Host Volumes
+    - In the run command you specify both the host directory and the container directory that will contain the data
+    - ``docker run -v /home/mount/data:/var/lib/mysql/data``
+    - You decide where on the host file system the reference is made
+  - Anonymous Volumes
+    - In the run command you specify only the container directory that will contain the data
+    - Docker will automatically create a directory into the host machie
+    - ``docker run -v /var/lib/mysql/data``
+  - Named Volumes
+    - ``docker run -v name:/var/lib/mysql/data``
+    - In the run command we reference the name of the directory in the host machine where you want to save your data
+    - Should be used in production
+   
+### 
 
 ## Module 13 - Programming Basics with Phython
 
