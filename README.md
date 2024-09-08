@@ -892,6 +892,16 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 - To build a Docker image -> docker build -t nameOfApp:nameOfVersion pathToDockerFile
 - The path to the Dockerfile can simply be a dot (because we are in the directory containing the Dockerfile)
 
+### 7.11 Private Docker Repository
+- Image Naming in Docker registries:
+  registryDomain/imageName:tag
+- We have to tag the image (aka: renaming the image) so that we can add the registry domain in the name
+- Note: when we tag an image, we do not rename it, but we create a copy of that image with the new name
+- Note: ``docker login`` needs to be done only once. After that, you can pull and push images any number of times you want
+
+### 7.12 Docker Volumes - Persisting Data
+- 
+
 ## Module 13 - Programming Basics with Phython
 
 ### 13.1 Introduction to Python
