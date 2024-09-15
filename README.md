@@ -917,7 +917,26 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
     - In the run command we reference the name of the directory in the host machine where you want to save your data
     - Should be used in production
    
-### 
+### 7.17 Docker Best Practices
+- Use Official Docker Images as Base Image
+  - eg: instead of "FROM ubuntu" + install packages by yourself, use "FROM node" in the Dockerfile
+- Specify the tag of the docker image
+  - eg: instead of "FROM node", use "FROM node:20.0.2"
+- Pick smaller docker images (instead of those based on full-blown operating systems, which are larger and also less secure)
+   - eg: instead of "FROM node:20.0.2", use "FROM node:20.0.2-alpine"
+- Optimize Caching Image Layers
+  - When you rebuild an image and the dockerfile has slightly changed, docker will only download the added layers, while it will take the "older" layer from its cache memory
+- Order Dockerfile commands from least to most frequently changing (to take advantage of caching and to reduce the time needed to build an image)
+- Exclude unnecessary files in the docker image
+  - Create .dockerignore file in the root directory
+- Some contents are only needed for building the image but not to run the app
+  - Delete artifacts created during the creation of the docker image (these artifacts might be development tools, build tools, temporary files and test dependencies like pom.xml)
+  - Make use of "Multi-Stage Builds" -> keeps only the latest image generated during the creation of a docker image
+- Do not start applications usin root OS users
+  - Create a dedicated user and group in the docker image
+  - " RUN groupadd -r tom && useradd -g tom tom" + "USER tom" in the dockerfile to create a user in the image and to switch to that user when starting the app
+- Scan your images for vulnerabilities
+  - ``docker login `` + ``docker scout cves myapp:1.0``
 
 ## Module 13 - Programming Basics with Phython
 
