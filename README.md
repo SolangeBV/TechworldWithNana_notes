@@ -938,7 +938,21 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 - Scan your images for vulnerabilities
   - ``docker login `` + ``docker scout cves myapp:1.0``
 
-## Module 13 - Programming Basics with Phython
+## Module 8 - Build Automation & CI/CD with Jenkins
+
+### 8.1 Intro to Build Automation
+- The testing and building should be executed automatically on a dedicated server when new code is pushed into the master branch
+- Example of flow of build automation:
+  1) Test Code
+  2) Build Application
+  3) Push to Repository
+  4) Deploy to Server
+- Jenkins is a software that you install on a dedicated server and it can perform all the afore-mentioned tasks of build automation
+- Jenkins needs to integrate with many other tools, eg: Docker, Build Tools, Repositories, Deployment Servers (you can use plugins to integrate Jenkins with these tools)
+
+### 8.
+
+## Module 13 - Programming Basics with Python
 
 ### 13.1 Introduction to Python
 - Python is used for:
