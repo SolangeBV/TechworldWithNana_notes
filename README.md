@@ -994,6 +994,13 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 - Create a groovy script that can be used by the Jenkinsfile (instead of having the Groovy code in the Jenkinsfile, which could make it too long and not very readable)
   - ``script{gv = load "script.groovy"}``
   - NB: all environmental variables in Jenkinsfile are available in the groovy script
+- Input Parameter in Jenkinsfile
+  - ``input{message "Select the environment to deploy to"
+	ok "Done"
+	parameters {
+		choice(name: 'ENV', choices: ['dev', 'staging', 'production'], description:'') }``
+
+### 8.10 Create complete Pipeline
 - 
 
 ## Module 13 - Programming Basics with Python
