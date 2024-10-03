@@ -1000,7 +1000,7 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 	parameters {
 		choice(name: 'ENV', choices: ['dev', 'staging', 'production'], description:'') }``
 
-### 8.10 Create complete Pipeline
+### 8.11 - Introducction to Multibranch Pipeline
 - 
 
 ## Module 13 - Programming Basics with Python
