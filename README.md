@@ -950,7 +950,51 @@ scp build/libs/java-react-example.jar root@68.183.217.122:/root (file you want t
 - Jenkins is a software that you install on a dedicated server and it can perform all the afore-mentioned tasks of build automation
 - Jenkins needs to integrate with many other tools, eg: Docker, Build Tools, Repositories, Deployment Servers (you can use plugins to integrate Jenkins with these tools)
 
-### 8.
+### 8.7 - Freestyle to Pipeline Job
+- Freesyle Jobs are meant to be standalone jobs that execute each one single step
+- Inside a freestyle job you can configure Post-build Actions, meaning that you can trigger another job after the current one has finished
+- These chained freestyle jobs have a lot of limitations
+- Pipeline jobs are the type of jobs used mostly among the jobs available in Jenkins
+
+### 8.8 - Intro to Pipeline Job
+- Create a pipeline in Jenkins:
+  - Dashboard > New Item > Pipeline
+  - Connect Pipeline to GitLab repo: Configure > Pipeline > Pipeline script from SCM > try sample pipeline > GitHub + Maven (it will take a script from a Groovy file in your sourcecode)
+    - SCM: Git
+    - Repository Url -> refer to java-maven-app.git
+    - Credentials -> pick the already existing ones from the freestyle jobs
+    - Script path -> Jenkinsfile (which will be located within the root folder)
+  - Create a Jenkinsfile in your sourcecode
+  - Save and build
+- Advantages of Pipeline Jobs:
+  - No need to configure the Job through the Jenkins UI
+  - Useful when conditional logic is needed (in a freestyle job, you might find a plugin that manages that logic)    
+- Groovy Sandbox: Security feature that provides a restricted execution environment (aka: you can execute a limited number of Groovy functions without needing approval from a Jenkins admin) -> allows to execute the whitelisted functions without needing the permission of a Jenkins user
+
+### 8.9 Jenkinsfile Syntax
+- ``post`` in a Jenkinsfile -> to execute some logic AFTER all stages are executed
+  - eg: conditions (always, success, failure)
+- Define conditionals for each stage:
+  - eg: define test only for develop branch:
+    `` stage("test"){when {expression {env.BRANCH_NAME='dev'}}}``
+- Environmental Variables:
+  - You can find all Jenkins in-built variables under yourServerIp:8080/env-vars.html
+  - You can also define your own environmental variables:
+    In the Jenkinsfile: ``environment {NEW_VERSION = '1.3'}``
+- Using Credentials in Jenkinsfile
+  - In the environment block, extract the credentials that you have already entered in Jenkins (NB: remember to enable the Credentials plugin in Jenkins):
+    `` SERVER_CREDENTIALS = credentials('server-credentials')``
+- Tools attribute
+  - Access Build Tools for your projects (eg: Maven, Gradle, jdk, ...)
+  - ``tools {maven maven-3.9}``
+  - NB: the tool you are using needs to be already installed and configured in Jenkins
+- Parameters in Jenkinsfile
+  - To add external configurations to your app
+  - When you build the pipeline job in Jenkins, you can pick the parameters ("Build with parameters"), if you have configured some in the Jenkinsfile
+- Create a groovy script that can be used by the Jenkinsfile (instead of having the Groovy code in the Jenkinsfile, which could make it too long and not very readable)
+  - ``script{gv = load "script.groovy"}``
+  - NB: all environmental variables in Jenkinsfile are available in the groovy script
+- 
 
 ## Module 13 - Programming Basics with Python
 
